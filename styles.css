@@ -544,6 +544,128 @@ a:hover {
 }
 
 /* ===========================
+   Sessional Assessment Section
+   =========================== */
+
+.assessment-subsection {
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-2xl);
+    border-bottom: 1px solid var(--border);
+}
+
+.assessment-subsection:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.subsection-title {
+    font-size: var(--font-size-xl);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-md);
+    border-left: 4px solid var(--primary);
+    transition: var(--transition);
+}
+
+.subsection-title:hover {
+    color: var(--primary);
+    padding-left: var(--spacing-lg);
+}
+
+/* ===========================
+   Weekly Learning Section
+   =========================== */
+.weekly-learning-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.section-intro {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Grid Layout */
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+/* Card Styling */
+.learning-card {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+/* Gradient Top Accent */
+.learning-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), #6366f1, #8b5cf6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover Effects */
+.learning-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 16px 32px rgba(99, 102, 241, 0.18);
+}
+
+.learning-card:hover::after {
+    opacity: 1;
+}
+
+/* Title */
+.learning-topic {
+    font-size: var(--font-size-lg);
+    color: var(--text-primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* Icon */
+.learning-topic::before {
+    content: '📚';
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+/* Description */
+.learning-description {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* Mobile Optimization */
+@media (max-width: 500px) {
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ===========================
    Projects Section
    =========================== */
 
@@ -983,6 +1105,30 @@ a:hover {
     /* Career Section */
     .career-content {
         grid-template-columns: 1fr;
+    }
+
+    /* Sessional Assessment Section */
+    .assessment-subsection {
+        margin-bottom: var(--spacing-xl);
+        padding-bottom: var(--spacing-xl);
+    }
+
+    .subsection-title {
+        padding-left: var(--spacing-sm);
+        font-size: var(--font-size-lg);
+    }
+
+    .subsection-title:hover {
+        padding-left: var(--spacing-md);
+    }
+
+    /* Weekly Learning Section */
+    .learning-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .learning-card {
+        padding: var(--spacing-md);
     }
 
     /* Contact Section */

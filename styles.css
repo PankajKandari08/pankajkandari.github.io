@@ -946,6 +946,25 @@ a:hover {
         min-width: auto;
     }
 
+    /* Make primary buttons full-width on small screens for easier tapping */
+    .btn {
+        width: 100%;
+    }
+
+    /* Slightly larger nav links for easier tapping */
+    .nav-menu li a {
+        font-size: var(--font-size-lg);
+        padding: 0.75rem 0;
+        display: block;
+    }
+
+    /* Larger form inputs on mobile */
+    .form-group input,
+    .form-group textarea {
+        font-size: var(--font-size-lg);
+        padding: calc(var(--spacing-md) + 4px);
+    }
+
     /* About Section */
     .about-content {
         grid-template-columns: 1fr;
